@@ -1,19 +1,14 @@
-# .semaphore/semaphore.yml
-
 version: v1.0
 name: Code Review Pipeline
-
 agent:
   machine:
     type: e1-standard-2
     os_image: ubuntu2004
-
 global_job_config:
   prologue:
     commands:
       - checkout --depth=full
       - npm install
-
 blocks:
   - name: Commit Review
     task:
